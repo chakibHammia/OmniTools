@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="elements.css">
+    <link rel="stylesheet" href="classes.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fd227b309e.js" crossorigin="anonymous"></script>
+    <title>Omni Tools</title>
+</head>
+<body>
+
+    <h1 style="font-size: 70px;">OmniTools</h1>
+    
+    <!--Options Card------------------------------------------------------------------------------------------------------------------>
+    <div id="options" class="card">
+        <button class="optionsBtn btns">Age Calculator </button>
+        <button class="optionsBtn btns">Weather App</button>
+        <button class="optionsBtn btns" id="tempetatureConverterBtn">Temperature Converter</button>
+        <button class="optionsBtn btns" id="binaryToDecimalBtn">Decimal To Binary</button>
+        <button class="optionsBtn btns">Country Guide App</button>
+        <button class="optionsBtn btns">Random Number</button>
+        <button class="optionsBtn btns" id="randomChoicePickerBtn">Random Choice Picker</button>
+    </div>
+
+    <!--Random choice picker----------------------------------------------------------------------------------------------------->
+    <div id="randomChoicePicker" class="card" >
+        <h1>Random Choice Picker</h1>
+        <input type="text" placeholder="Enter Your choices Separated By Coma" class="inputs" id="randomChoicePickerInput" autocomplete="off">
+        <button class="btns" id="chooseBtn">Choose</button>
+        <h2 id="chosen" style="font-size: 30px;">-</h2>
+    </div>
+
+    <!--Temperature Converter----------------------------------------------------------------------------------------------------->
+    <div class="card">
+        <h1>Temperature Converter</h1>
+        <label for="celsius">°C</label>
+        <input type="text" id="celsius" class="inputs temps" autocomplete="off">
+        <label for="celsius">°F</label>
+        <input type="text" id="fahrenheit" class="inputs temps" autocomplete="off">
+        <label for="celsius">K</label>
+        <input type="text" id="kalvin" class="inputs temps" autocomplete="off">
+    </div>
+
+    <!--Binary To Decimal----------------------------------------------------------------------------------------------------->
+    <div class="card">
+        <h1>Decimal To Binary</h1>
+        <label for="decimal">Decimal</label>
+        <input type="text" class="inputs BTD" id="decimal" autocomplete="off">
+        <label for="binary">Binary</label>
+        <input type="text" class="inputs BTD" id="binary" autocomplete="off">
+    </div>
+    <button id="scrollTop" class="btns"><i class="fa-solid fa-arrow-down fa-rotate-180"></i></button>
+    <script src="script.js"></script>
+</body>
+</html>
