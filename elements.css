@@ -20,8 +20,9 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 700px;
-    padding: 30px;
+    width: auto;
+    padding: auto;
+    max-width: 700px;
     padding-bottom: 10px;
 }
 

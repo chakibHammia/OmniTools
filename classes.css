@@ -9,7 +9,7 @@
     height: auto;
     margin-bottom: 200px;
     text-align: center;
-     background-color: rgb(227, 227, 227);
+    background-color: rgb(227, 227, 227);
     border: 2.5px solid black;
     box-shadow: 4px 4px black;
 }
@@ -48,6 +48,7 @@
     font-size: 20px;
     box-shadow: 4px 4px rgb(168, 168, 168);
     border: 2px solid rgb(168, 168, 168);
+    text-align: center;
 }
 
 .inputs:focus {

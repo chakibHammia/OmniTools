@@ -18,7 +18,7 @@
     <!--Options Card------------------------------------------------------------------------------------------------------------------>
     <div id="options" class="card">
         <button class="optionsBtn btns">Age Calculator </button>
-        <button class="optionsBtn btns">Weather App</button>
+        <button class="optionsBtn btns" id="weatherAppBtn">Weather App</button>
         <button class="optionsBtn btns" id="tempetatureConverterBtn">Temperature Converter</button>
         <button class="optionsBtn btns" id="binaryToDecimalBtn">Decimal To Binary</button>
         <button class="optionsBtn btns">Country Guide App</button>
@@ -54,6 +54,17 @@
         <input type="text" class="inputs BTD" id="binary" autocomplete="off">
     </div>
     <button id="scrollTop" class="btns"><i class="fa-solid fa-arrow-down fa-rotate-180"></i></button>
+    
+
+    <!--Weather app---------------------------------------------------------------------------------------------------------------->
+    <div class="card">
+        <h1>Weather App</h1>
+        <label for="cityName">Enter your city Name</label>
+        <input type="text" class="inputs" id="cityName">
+        <button class="btns" style="margin-top: 10px;" id="get">Get</button>
+        <h1 style="font-size: 50px; margin-top: 20px;" id="weatherResult">-</h1>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>

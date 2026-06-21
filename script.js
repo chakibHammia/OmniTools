@@ -9,6 +9,10 @@ let binaryToDecimalBtn = document.getElementById('binaryToDecimalBtn');
 let decimal = document.getElementById('decimal');
 let binary = document.getElementById('binary');
 let theme2 = document.getElementById('theme2');
+let cityName = document.getElementById('cityName');
+let weatherResult = document.getElementById('weatherResult');
+let get = document.getElementById('get');
+let weatherAppBtn = document.getElementById('weatherAppBtn');
 
 //scroll buttons//-----------------------------------------------------------------------------------------------------------
 window.onscroll = () => {
@@ -47,6 +51,15 @@ binaryToDecimalBtn.onclick = () => {
         behavior: 'smooth'
     });
 }
+
+weatherAppBtn.onclick = () => {
+    scrollTo({
+        top: 1789,
+        behavior: 'smooth'
+    });
+}
+
+
 
 //random choice picker//-----------------------------------------------------------------------------------------------------------
 chooseBtn.onclick = () => {
@@ -88,6 +101,8 @@ decimal.oninput = () => {
     binary.value = bin.split('').reverse().join('');
 }
 
+//Binary to decimal//----------------------------------------------------------------------------------------------------------------
+
 binary.oninput = () => {
     let num = 111;
     for(let z = 0; z < binary.value.length; z++) {
@@ -104,3 +119,40 @@ binary.oninput = () => {
         }
     }
 }
+
+//weather app//----------------------------------------------------------------------------------------------------------------
+
+
+async function getWeather(city) {
+
+//get lon and lat-------------------------------------------------------------------------------------------------------------------
+    try {
+
+        let fetchCards = await fetch(`https://geocode.maps.co/search?q=${city}&api_key=6a328304d9c25129858954wfe56613a`);
+        let cards = await fetchCards.json();
+
+        if(cards.length === false) {
+            throw new Error("City Not Found");
+        }
+
+        let cityCards = {
+            lon: cards[0].lon,
+            lat: cards[0].lat,
+        }
+    
+        const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${cityCards.lat}&longitude=${cityCards.lon}&current=temperature_2m`);
+        let weather = await response.json();
+        return Math.ceil(weather.current.temperature_2m);
+    }catch(err) {
+        console.log(err);
+        return null;
+    }
+
+}
+
+get.onclick = async function() {
+    console.log(await getWeather(cityName.value))
+    weatherResult.innerHTML = `${await getWeather(cityName.value)}°`
+}
+
+
